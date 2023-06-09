@@ -1,0 +1,12 @@
+Package: funpca
+Type: Package
+Title: Functional Principal Component Analysis
+Version: 6.0
+Date: 2023-06-08
+Author: Francisco Rosales
+Maintainer: Francisco Rosales <francisco.rosales-marticorena@protonmail.com>
+Depends: Brobdingnag, MASS, nlme, fda, eBsc
+Description: Functional principal component analysis under the Linear Mixed Models representation of smoothing splines. 
+License: GPL-2
+NeedsCompilation: no
+Packaged: 2023-06-08 00:04:18 UTC; franciscorosales
