@@ -19,7 +19,7 @@ plot.funpca <-function(x,...){
     lines(index,f,lwd=4)
 
     # di
-    plot(index,di[,1],type="l",col=0,ylim=range(y),xlab="",ylab="",main="Subject Specific Deviations"); 
+    plot(index,di[,1],type="l",col=0,ylim=range(di),xlab="",ylab="",main="Subject Specific Deviations"); 
     for(i in 1:ncol(di)) lines(index,di[,i],col=8)
     lines(index,rep(0,nindex),col=1,lwd=4)
 

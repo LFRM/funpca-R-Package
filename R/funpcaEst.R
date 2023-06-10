@@ -104,7 +104,7 @@ function(mat,k){
 
     #<-return
     for(iter in 1:iterations){
-        print(paste('Iterartion ',iter))  
+        print(paste('Iteration ',iter))  
   
         # deviations
         f.Z.ef <- ef
@@ -244,7 +244,7 @@ function(mat,k){
     mu <- est$coefficients$random$One.Vec.All[1:nr]
 
     # confidence bands
-    samples.f <- t(mvrnorm(n = 10000, f.X%*%beta+f.Z%*%mu, (sigma2.b^2)*f.Z%*%t(f.Z))) 
+    samples.f <- t(mvrnorm(n = 10000, f.X%*%beta+f.Z%*%mu, (sigma2.b)*f.Z%*%t(f.Z)+(sigma2.e)*diag(num.times))) 
     f.ucb <- apply(samples.f,1,quantile,1-alpha.cb/2)
     f.lcb <- apply(samples.f,1,quantile,alpha.cb/2)
 
@@ -258,11 +258,11 @@ function(mat,k){
     fd1 <- matrix(f.X.der1%*%beta+f.Z.der1%*%mu,num.times,num.cases)[,1]
     fd2 <- matrix(f.X.der2%*%beta+f.Z.der2%*%mu,num.times,num.cases)[,1]
     
-    samples.fd1 <- t(mvrnorm(n = 10000, f.X.der1%*%beta+f.Z.der1%*%mu, (sigma2.b^2)*f.Z.der1%*%t(f.Z.der1))) 
+    samples.fd1 <- t(mvrnorm(n = 10000, f.X.der1%*%beta+f.Z.der1%*%mu, (sigma2.b)*f.Z.der1%*%t(f.Z.der1)+(sigma2.e)*diag(num.times))) 
     fd1.ucb <- apply(samples.fd1,1,quantile,1-alpha.cb/2)
     fd1.lcb <- apply(samples.fd1,1,quantile,alpha.cb/2)
 
-    samples.fd2 <- t(mvrnorm(n = 10000, f.X.der2%*%beta+f.Z.der2%*%mu, (sigma2.b^2)*f.Z.der2%*%t(f.Z.der2))) 
+    samples.fd2 <- t(mvrnorm(n = 10000, f.X.der2%*%beta+f.Z.der2%*%mu, (sigma2.b)*f.Z.der2%*%t(f.Z.der2)+(sigma2.e)*diag(num.times))) 
     fd2.ucb <- apply(samples.fd2,1,quantile,1-alpha.cb/2)
     fd2.lcb <- apply(samples.fd2,1,quantile,alpha.cb/2)
 
