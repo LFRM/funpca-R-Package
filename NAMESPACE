@@ -1,5 +1,5 @@
 importFrom("grDevices", "x11")
-importFrom("graphics", "abline", "lines", "par", "legend", "axis", "box")
+importFrom("graphics", "abline", "lines", "par", "legend", "axis", "box", "polygon")
 importFrom("stats", "acf", "coef", "quantile", "sd", "uniroot", "na.pass", "pacf")
 
 export(funpcaEst)
@@ -18,6 +18,5 @@ import(
     Brobdingnag,
     MASS,
     nlme,
-    fda,	
-    eBsc	
+    fda
 )

@@ -7,14 +7,12 @@ Functional Principal Component Analysis
 Performs functional principal component analysis using the mixed models representation of smoothing splines. 
 }
 \usage{
-funpca(DATA,k,correlation=NULL)
+funpca(mat,k)
 }
 \arguments{
-  \item{DATA}{Is a rectangular matrix with no missing values.Each colum represents a sample.  
+  \item{mat}{Is a rectangular matrix with no missing values.Each colum represents a sample.  
 }
   \item{k}{Desired number of eigen functions to construct subj spec deviations. Should be between 1 and the sample size.  
-}
-  \item{correlation}{Is an entry of the form: corARMA(p=P,q=Q). It represents the correlation to be used for the remainder component. If left empty a white noise remainder is assumed. 
 }
 }
 \details{
@@ -27,10 +25,8 @@ A list object of class \code{funpca} containing the following information.
 \item{di}{A matrix with the fitted subj spec deviations}
 \item{fi}{Fitted values for each subject, i.e. fitted overall trend + fitted subj spec deviations + subj spec seasonality.}
 \item{error}{Remainder component for each subject.}
-\item{fd1}{x first derivative of the overall trend.}
-\item{fd2}{x second derivative of the overall trend.}
 \item{residuals}{Remainder component for each subject.}
-\item{DATA}{Data used for all the computations.}
+\item{y}{Data used for all the computations.}
 \item{call}{Call of funpca.}
 }
 \references{

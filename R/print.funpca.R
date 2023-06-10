@@ -1,9 +1,9 @@
 print.funpca <-
 function(x,...)
 {
-q.f<-(x$parameters)[3]
-q.di<-(x$parameters)[4]
-num.iter<-x$num.iter
+q.f <- (x$parameters)[3]
+q.di <- (x$parameters)[4]
+num.iter <- x$num.iter
   
 cat("Call:\n")
 print(x$call)

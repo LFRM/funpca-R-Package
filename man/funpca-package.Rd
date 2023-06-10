@@ -11,7 +11,7 @@ Performs functional principal component analysis using the mixed models represen
 \tabular{ll}{
 Package: \tab fpcamm\cr
 Version: \tab 1.0\cr
-Date: \tab 2016-05-24\cr
+Date: \tab 2023-06-08\cr
 Depends: \tab Brobdingnag, MASS, nlme\cr
 }
 

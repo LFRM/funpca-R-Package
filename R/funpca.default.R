@@ -1,22 +1,22 @@
 funpca.default <-
-function(DATA, k = NULL, correlation = NULL)
+function(mat, k)
 {
-est <- funpcaEst(DATA,k,correlation)
-#est$fi<-est$fi
-est$f<-est$f
-est$y<-est$y
-#est$di<-est$di
-#est$fd1<-est$fd1
-#est$fd2<-est$fd2
-#est$residuals<-est$error
-#est$lmm<-est$est
-#est$cb.upp<-est$cb.upp
-#est$cb.low<-est$cb.low
 
-##editado 8 feb 2021
-#est$ef
-#est$alpha
-    
+est <- funpcaEst(mat,k)
+est$fi <- est$fi
+est$f <- est$f
+est$fd1 <- est$fd1
+est$y <- est$y
+est$di <- est$di
+est$residuals <-est$error
+est$lmm <- est$est
+est$ef <- est$ef
+est$alpha <- est$alpha
+est$f.ucb <- est$f.ucb 
+est$f.lcb <- est$f.lcb 
+est$fd1.ucb <- est$fd1.ucb 
+est$fd1.lcb <- est$fd1.lcb 
+
 est$call <- match.call()
 class(est) <- "funpca"
 est

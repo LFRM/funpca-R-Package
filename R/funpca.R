@@ -1,2 +1,2 @@
 funpca <-
-function(DATA,k,correlation=NULL) UseMethod("funpca")
+function(mat,k) UseMethod("funpca")
