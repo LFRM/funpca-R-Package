@@ -12,6 +12,9 @@ plot.funpca <-function(x,...){
     index = seq(0,1,length.out=length(f))
     nindex = length(index) 
 
+    oldpar <- par(no.readonly = TRUE)
+    on.exit(par(oldpar))
+
     par(mfrow=c(2,2),mar=c(2,2,2,2))
     # fi and f
     plot(index,f,type="l",col=1,ylim=range(y),xlab="",ylab="",main="Functional Data"); 

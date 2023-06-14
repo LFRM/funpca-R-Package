@@ -22,7 +22,7 @@ The function returns the selected plots.
 }
 \references{
 Rosales, F.\cr
-work in progress
+For more details see <https://ediss.uni-goettingen.de/handle/11858/00-1735-0000-0028-87F9-6> 
 }
 \author{
 Francisco Rosales
@@ -32,12 +32,14 @@ Francisco Rosales
 \code{\link[funpca]{plot.funpca}} (package funpca)
 }
 \examples{
+\donttest{
 library(fda)
 sdata <- NULL
 data <- CanadianWeather$monthlyTemp
 for(i in 1:ncol(data)) sdata <- cbind(sdata,spline(data[,i])$y)
 x <- funpca(sdata, k=3)
 plot(x)
+}
 }
 
 \keyword{plot}

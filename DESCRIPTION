@@ -1,12 +1,11 @@
 Package: funpca
 Type: Package
 Title: Functional Principal Component Analysis
-Version: 7.0
+Version: 9.0
 Date: 2023-06-08
-Author: Francisco Rosales
-Maintainer: Francisco Rosales <francisco.rosales-marticorena@protonmail.com>
+Authors@R: c(person("Francisco Rosales", email = "francisco.rosales-marticorena@protonmail.com", role 	= c("aut", "cph","cre")), person("Tatyana Krivobokova", email = 	"tatyana.krivobokova@univie.ac.at", role = c("con", "ths")))
 Depends: Brobdingnag, MASS, nlme, fda
-Description: Functional principal component analysis under the Linear Mixed Models representation of smoothing splines. 
+Description: Functional principal component analysis under the Linear Mixed Models representation of smoothing splines. The method utilizes the Demmler-Reinch basis and assumes error independence. For more details see <https://ediss.uni-goettingen.de/handle/11858/00-1735-0000-0028-87F9-6>.
 License: GPL-2
 NeedsCompilation: no
 Packaged: 2023-06-08 00:04:18 UTC; franciscorosales

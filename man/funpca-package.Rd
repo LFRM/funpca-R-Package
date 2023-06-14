@@ -18,9 +18,9 @@ Depends: \tab Brobdingnag, MASS, nlme\cr
 Index:
 \preformatted{
 funpca                    Performs FPCA using the MM representation of
-                        penalized splines.
-plot.funpca   	        Plots fitted curves: overall trend, subj spec
-                        deviations and derivative of the mean curve.
+                          penalized splines.
+plot.funpca   	          Plots fitted curves: overall trend, subj spec
+                          deviations and derivative of the mean curve.
 summary.funpca            Summary of individual fits.
 }
 The function \code{funpca()} is used to fit the model. Using the resulting \code{funpca} object, fitted curves or their derivatives can be plotted with \code{\link{plot}} and summary information on the fit can be printed using \code{\link{summary}}.
@@ -28,12 +28,12 @@ The function \code{funpca()} is used to fit the model. Using the resulting \code
 
 \author{
 Francisco Rosales
-Maintainer: Francisco Rosales <l.rosalesmarticore@stud.uni-goettingen.de>
+Maintainer: Francisco Rosales \email{francisco.rosales-marticorena@protonmail.com}
 }
 
 \references{
-Rosales, F. and Krivobokova\cr
-work in progress
+Rosales, F.\cr
+For more details see <https://ediss.uni-goettingen.de/handle/11858/00-1735-0000-0028-87F9-6> 
 }
 
 \keyword{package}

@@ -32,14 +32,14 @@ function(mat,k){
 #==================================Basis===================================================  
 # STEP 0 * Computing Initial Values:
 #==================================Basis===================================================
-    print('Running initialization * Computing DR Basis...')
+    message('Running initialization * Computing DR Basis...')
     
     if(!exists("Basis")) Basis <- drbasis(nn = num.times, qq = 2, deriv = derivv)
     n = num.times
 #==================================Initial===================================================  
 # STEP 2 * Computing Initial Values:
 #==================================Initial===================================================
-    print('Running STEP 1 * Light smoothing...')
+    message('Running STEP 1 * Light smoothing...')
 
     # light smoothing
     q.trend1 <- 2;
@@ -69,7 +69,7 @@ function(mat,k){
 #==================================Select k===================================================  
 # STEP 2 * Selecting k
 #==================================Select k===================================================
-    print('Running STEP 2 * Selecting k...');
+    message('Running STEP 2 * Selecting k...');
 
     svd <- svd(t(di),nu = num.cases,nv = num.times);
     u <- svd$u;
@@ -83,7 +83,7 @@ function(mat,k){
 #==================================Update===================================================  
 # STEP 3.1 * Updating Components
 #==================================Update===================================================
-    print('Running STEP 3 * Updating Components...')
+    message('Running STEP 3 * Updating Components...')
 
     # variables
     One.Vec.All <- rep(1,num.times*num.cases)
@@ -104,7 +104,7 @@ function(mat,k){
 
     #<-return
     for(iter in 1:iterations){
-        print(paste('Iteration ',iter))  
+        message(paste('Iteration ',iter))  
   
         # deviations
         f.Z.ef <- ef
@@ -188,7 +188,7 @@ function(mat,k){
         convergence <- c(convergence,convergence.c);
   
         if(convergence[length(convergence)] < (threshold)){
-            print('Convergence achieved');
+            message('Convergence achieved');
             if(iter == 1){
                 ef <- ef.c
                 ef.d1 <- ef.d1.c
@@ -221,7 +221,7 @@ function(mat,k){
 #==================================Get estimator===================================================
 # STEP 4.1 * Get estimations
 #==================================Get estimator===================================================
-    print('Running STEP 4 * Getting Final Estimators...')
+    message('Running STEP 4 * Getting Final Estimators...')
 
     corcoefs<-"Model fitted with white noise remainder"
     est <- lme(y~ - 1 + X.pop,random = list(One.Vec.All = pdIdent(~Z.pop - 1),casesId = pdDiag(~Z.cases.ef - 1)),correlation = NULL);

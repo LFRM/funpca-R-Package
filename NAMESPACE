@@ -6,12 +6,12 @@ export(funpcaEst)
 export(funpca)
 export(plot.funpca)
 export(print.funpca)
+export(summary.funpca)
 
 S3method(plot, funpca)
 S3method(print, funpca)
+S3method(summary, funpca)
 S3method(funpca,default)
-
-
 
 # Import all packages listed as Imports or Depends
 import(

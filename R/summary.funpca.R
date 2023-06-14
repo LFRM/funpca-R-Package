@@ -1,6 +1,6 @@
 summary.funpca <-
-function(x,...)
+function(object,...)
 {
-    est = x$est
+    est = object$est
     
 }

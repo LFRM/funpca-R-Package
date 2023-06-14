@@ -1,5 +1,9 @@
 drbasis <-
 function(nn,qq,deriv){
+    
+    old <- options() 
+    on.exit(options(old)) 
+
     options(expressions=10000)
     n <- nn
     kset <- seq(1,n);
